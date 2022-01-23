@@ -1,5 +1,5 @@
 import Cipher.Affine;
-import Math.ModularArithmetic;
+import Math.Functions;
 
 /**
  * Handles the command line arguments for the Cryptographic Services program
@@ -32,6 +32,11 @@ public class Main
                 Affine.execute(args);
                 break;
         }
+
+        System.out.println(Functions.getTotientOf(4));
+        System.out.println(Functions.getTotientOf(5));
+        System.out.println(Functions.getTotientOf(9));
+        System.out.println(Functions.getTotientOf(26));
     }
 
     public static void printHelp()

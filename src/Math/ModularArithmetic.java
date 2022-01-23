@@ -13,4 +13,14 @@ public class ModularArithmetic
 
         return 0;
     }
+
+    public static int mod(int a, int b)
+    {
+        int answer = a % b;
+
+        if (answer < 0)
+            return answer + b;
+        else
+            return answer;
+    }
 }

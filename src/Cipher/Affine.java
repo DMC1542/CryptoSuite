@@ -1,6 +1,7 @@
 package Cipher;
 
 import java.util.Locale;
+import Math.ModularArithmetic;
 
 public class Affine
 {
@@ -28,7 +29,7 @@ public class Affine
 
         // Now to decrypt
         for (int k = 0; k < text.length(); k++)
-            plaintext[k] = (char)(mod(i * (ciphertext[k] - b), 26) + ASCII_A);
+            plaintext[k] = (char)(ModularArithmetic.mod(i * (ciphertext[k] - b), 26) + ASCII_A);
 
         System.out.println(plaintext);
     }
@@ -78,15 +79,5 @@ public class Affine
             decrypt(b, i, message);
         else
             System.out.println("No encryption or decryption argument specified. Exiting.");
-    }
-
-    private static int mod(int a, int b)
-    {
-        int answer = a % b;
-
-        if (answer < 0)
-            return answer + b;
-        else
-            return answer;
     }
 }
