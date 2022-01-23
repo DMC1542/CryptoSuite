@@ -32,11 +32,6 @@ public class Main
                 Affine.execute(args);
                 break;
         }
-
-        System.out.println(Functions.getTotientOf(4));
-        System.out.println(Functions.getTotientOf(5));
-        System.out.println(Functions.getTotientOf(9));
-        System.out.println(Functions.getTotientOf(26));
     }
 
     public static void printHelp()
