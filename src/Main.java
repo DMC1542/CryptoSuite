@@ -1,4 +1,5 @@
 import Cipher.Affine;
+import Math.ModularArithmetic;
 
 /**
  * Handles the command line arguments for the Cryptographic Services program
