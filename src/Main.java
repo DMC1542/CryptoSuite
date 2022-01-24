@@ -1,4 +1,7 @@
 import Cipher.Affine;
+import Math.Functions;
+
+import java.util.function.Function;
 
 /**
  * Handles the command line arguments for the Cryptographic Services program
