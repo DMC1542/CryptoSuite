@@ -1,9 +1,20 @@
 package Operations;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 
 public class ModularArithmetic
 {
+    public static int mod(int a, int b)
+    {
+        int answer = a % b;
+
+        if (answer < 0)
+            return answer + b;
+        else
+            return answer;
+    }
+
     /**
      * Finds the modular multiplicative inverse of (a mod b)
      * @param a The number for which to find the inverse
@@ -64,13 +75,39 @@ public class ModularArithmetic
             return x;
     }
 
-    public static int mod(int a, int b)
+    /**
+     * Gets the order of a mod b, or the first power such that a^n = 1 mod b
+     * @param a The base number for which to find the order
+     * @param b The modulo m
+     * @return The order of a
+     */
+    public static int getOrderOf(String a, String b)
     {
-        int answer = a % b;
+        BigInteger bigA = new BigInteger(a), bigB = new BigInteger(b);
 
-        if (answer < 0)
-            return answer + b;
-        else
-            return answer;
+        // Start at one because a^0 always yields 1
+        for (int i = 1; i <= bigB.intValue(); i++)
+        {
+            if (bigA.modPow(new BigInteger("" + i), bigB).intValue() == 1)
+                return i;
+        }
+
+        // Should never return -1
+        return -1;
+    }
+
+    public static void getAllOrdersOf(String b)
+    {
+        System.out.println("Orders for all a mod " + b);
+        Integer mod = Integer.parseInt(b);
+        for (int i = 1; i < mod; i++)
+        {
+            int val = getOrderOf("" + i, b);
+
+            if (val == mod - 1)
+                System.out.println("a: " + i + "\tOrder:\t" + val + "\t<-- Primitive");
+            else
+                System.out.println("a: " + i + "\tOrder:\t" + val);
+        }
     }
 }

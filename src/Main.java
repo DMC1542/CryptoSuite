@@ -43,6 +43,8 @@ public class Main
                 else
                     System.out.println(result);
             }
+            case "order" -> System.out.println(ModularArithmetic.getOrderOf(args[1], args[2]));
+            case "allOrders" -> ModularArithmetic.getAllOrdersOf(args[1]);
         }
     }
 
@@ -69,6 +71,10 @@ public class Main
                     Usage: java -jar Cryptography.jar totient [integer]
                 3) Multiplicative Inverse
                     Usage: java -jar Cryptography.jar inverse [a] [b]
+                4) Order Of
+                    Usage: java -jar Cryptography.jar order [a] [b]
+                5) All orders of
+                    Usage: java -jar Cryptography.jar allOrders [a] [b]
                 """);
     }
 }
