@@ -1,7 +1,7 @@
 package Cipher;
 
 import java.util.Locale;
-import Math.ModularArithmetic;
+import Operations.ModularArithmetic;
 
 public class Affine
 {
